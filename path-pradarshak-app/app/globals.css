@@ -1,0 +1,298 @@
+
+/* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-500;
+  }
+  
+  .btn-outline-danger {
+    @apply border border-red-600 text-red-600 hover:bg-red-600 hover:text-white focus:ring-red-500;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg font-semibold;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-success {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .badge-danger {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .badge-info {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  /* Enhanced Section Styling */
+  .section {
+    @apply py-20 bg-white;
+  }
+
+  .section-alt {
+    @apply py-20 bg-gradient-to-br from-slate-50 to-blue-50;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Gradient Text */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  /* Dividers */
+  .divider {
+    @apply w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full;
+  }
+
+  /* Icon Wrappers */
+  .icon-wrapper {
+    @apply w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center shadow-md;
+  }
+
+  .icon-wrapper-accent {
+    @apply w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center shadow-md;
+  }
+
+  .icon-wrapper-warm {
+    @apply w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center shadow-md;
+  }
+
+  /* Testimonial Cards */
+  .testimonial-card {
+    @apply bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .testimonial-quote {
+    @apply text-slate-600 leading-relaxed mb-6 italic;
+  }
+
+  .testimonial-author {
+    @apply flex items-center gap-3;
+  }
+
+  .testimonial-avatar {
+    @apply w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm;
+  }
+
+  .testimonial-name {
+    @apply font-semibold text-slate-800;
+  }
+
+  .testimonial-role {
+    @apply text-sm text-slate-500;
+  }
+
+  /* Enhanced Shadows */
+  .shadow-strong {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Fixed Navigation Spacing */
+  .with-fixed-nav {
+    padding-top: 64px; /* 64px = h-16 (navbar height) */
+  }
+
+  /* React Calendar Custom Styling */
+  .custom-calendar {
+    @apply font-sans w-full max-w-4xl bg-white border border-gray-200 rounded-2xl shadow-lg;
+  }
+
+  .custom-calendar .react-calendar__tile {
+    @apply relative p-3 text-sm font-medium transition-all duration-300 h-20 flex flex-col items-center justify-center rounded-xl m-1;
+  }
+
+  .custom-calendar .react-calendar__tile--active {
+    @apply bg-gradient-to-br from-green-500 to-green-600 text-white font-semibold shadow-lg;
+  }
+
+  .custom-calendar .react-calendar__tile--now {
+    @apply bg-gradient-to-br from-blue-500 to-blue-600 text-white font-semibold shadow-lg;
+  }
+
+  .custom-calendar .react-calendar__tile:hover {
+    @apply bg-blue-50 transform -translate-y-1 shadow-md;
+  }
+
+  .custom-calendar .react-calendar__navigation {
+    @apply mb-6 p-4 bg-gray-50 rounded-xl mx-4;
+  }
+
+  .custom-calendar .react-calendar__navigation button {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 font-semibold shadow-md;
+  }
+
+  .custom-calendar .react-calendar__navigation button:hover {
+    @apply transform -translate-y-1 shadow-lg;
+  }
+
+  .custom-calendar .react-calendar__navigation button:disabled {
+    @apply bg-gray-300 text-gray-500 cursor-not-allowed transform-none shadow-none;
+  }
+
+  .custom-calendar .react-calendar__navigation__label {
+    @apply text-xl font-bold text-gray-800;
+  }
+
+  .custom-calendar .react-calendar__month-view__weekdays {
+    @apply text-gray-700 font-bold px-4;
+  }
+
+  .custom-calendar .react-calendar__month-view__weekdays__weekday {
+    @apply p-3 text-center text-sm uppercase tracking-wider;
+  }
+
+  .custom-calendar .react-calendar__month-view__days {
+    @apply px-4 pb-4;
+  }
+
+  .custom-calendar .react-calendar__month-view__days__day--neighboringMonth {
+    @apply text-gray-300 opacity-50;
+  }
+
+  /* Progress status indicators */
+  .custom-calendar .progress-completed {
+    @apply bg-gradient-to-br from-green-500 to-green-600 text-white font-semibold shadow-lg !important;
+  }
+
+  .custom-calendar .progress-partial {
+    @apply bg-gradient-to-br from-yellow-500 to-yellow-600 text-white font-semibold shadow-lg !important;
+  }
+
+  .custom-calendar .progress-missed {
+    @apply bg-gradient-to-br from-red-500 to-red-600 text-white font-semibold shadow-lg !important;
+  }
+
+  .custom-calendar .progress-pending {
+    @apply bg-gradient-to-br from-gray-500 to-gray-600 text-white font-semibold shadow-lg !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.8s ease-out;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+
+
+
+
+
+
