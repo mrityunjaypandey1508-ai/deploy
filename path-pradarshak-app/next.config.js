@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   experimental: {
     serverComponentsExternalPackages: ['mongoose'],
   },
@@ -8,7 +7,6 @@ const nextConfig = {
     domains: ['localhost'],
     unoptimized: true
   },
-
 }
 
 module.exports = nextConfig

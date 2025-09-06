@@ -146,7 +146,7 @@ export default function ReportIssuePage() {
       }
     } catch (error) {
       console.error('Error submitting issue:', error);
-      if (error.message.includes('Invalid token') || error.message.includes('Token expired')) {
+      if (error instanceof Error && (error.message.includes('Invalid token') || error.message.includes('Token expired'))) {
         alert('Your session has expired. Please log in again.');
         router.push('/auth/login');
       } else {
