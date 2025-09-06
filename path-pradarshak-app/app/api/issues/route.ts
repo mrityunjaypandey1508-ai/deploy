@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000';
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -12,7 +15,12 @@ export async function GET(request: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
       },
+      signal: AbortSignal.timeout(10000),
     });
+
+    if (!response.ok) {
+      throw new Error(`Backend responded with status: ${response.status}`);
+    }
 
     const data = await response.json();
     return NextResponse.json(data, { status: response.status });
@@ -35,7 +43,12 @@ export async function POST(request: NextRequest) {
         'Authorization': request.headers.get('Authorization') || '',
       },
       body: formData,
+      signal: AbortSignal.timeout(10000),
     });
+
+    if (!response.ok) {
+      throw new Error(`Backend responded with status: ${response.status}`);
+    }
 
     const data = await response.json();
     return NextResponse.json(data, { status: response.status });
